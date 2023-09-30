@@ -1,0 +1,41 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/example.json",
+  "definitions": {
+    "brand": {
+      "type": "object",
+      "properties": {
+        "brand": {
+          "$id": "#/properties/result/items/anyOf/0/properties/brand",
+          "type": "string"
+        }
+      },
+      "required": [
+        "brand"
+      ],
+      "additionalProperties": true
+    }
+  },
+  "type": "object",
+  "required": [
+    "result"
+  ],
+  "properties": {
+    "result": {
+      "$id": "#/properties/result",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/brand"
+        },
+        {
+          "$id": "#/properties/result/items/array",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/brand"
+          }
+        }
+      ]
+    }
+  },
+  "additionalProperties": true
+}

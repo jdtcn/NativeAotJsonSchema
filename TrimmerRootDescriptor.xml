@@ -1,0 +1,3 @@
+﻿<linker>
+  <assembly fullname="JsonSchema.Net" preserve="all" />
+</linker>
